@@ -2,7 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { CategoryId, Question, GameMode } from '../types';
 import { LOCAL_QUESTIONS } from '../data/localQuestions';
 
-const apiKey = process.env.API_KEY || '';
+const apiKey = process.env.VITE.API_KEY || '';
 const ai = new GoogleGenAI({ apiKey });
 
 export const fetchQuestions = async (categories: CategoryId[], count: number = 10, gameMode: GameMode = GameMode.NORMAL): Promise<Question[]> => {
